@@ -20,9 +20,9 @@ chosen_word = random.choice(words_list)
 print('Randomly chosen word:', chosen_word)
 
 
-guessed_letter = input('Guess a letter: ')
 while lives < 14:
-    for each_letter in chosen_word: #not right. prints all print statements for each letter in the chosen word
+    guessed_letter = input('Guess a letter: ')
+    for each_letter in chosen_word:
         if guessed_letter == each_letter:
             print('You got one right. ', guessed_letter, "is in the word")
             continue
