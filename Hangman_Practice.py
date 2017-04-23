@@ -20,17 +20,18 @@ chosen_word = random.choice(words_list)
 print('Randomly chosen word:', chosen_word)
 
 
-while lives < 14:
+while lives != 0:
     guessed_letter = input('Guess a letter: ')
     for each_letter in chosen_word:
-        if guessed_letter == each_letter:
-            print('You got one right. ', guessed_letter, "is in the word")
-            continue
-        elif lives < 14:
-            print('Guess again')
-        else:
-            print('Sorry, ', guessed_letter, 'is not in the word')
-            lives = lives - 1
+        if each_letter == guessed_letter:
+            match = guessed_letter
+
+    if guessed_letter == match:
+        print('You got one right. ', guessed_letter, "is in the word")
+    #        continue
+    else:
+        print('Sorry, ', guessed_letter, 'is not in the word')
+        lives = lives - 1
     break
         #blanks = blanks + '_ '
 
