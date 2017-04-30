@@ -8,31 +8,50 @@
 # 5) if all letters guessed, end game
 ######################
 
+# import random module
 import random
+
+# initialize blanks variable to empty string. Don't recall the purpose for this...
 blanks = ''
+
+# lives left initialized to 14
 lives = 14
 
 # list of words to work with
-words_list = ['chicken', 'horse', 'cat', 'mouse', 'dog', 'goat']
-
-# randomly chooses a word from words_list then prints it to stdout
-chosen_word = random.choice(words_list)
-print('Randomly chosen word:', chosen_word)
+words_list = ['chicken', 'horse', 'cat', 'mause', 'dag', 'goat']
 
 
+# while lives do not equal zero, chose a random, prompt the user for a guess, then analyze the guess
 while lives != 0:
+    # randomly choose a word from words_list then prints it to stdout
+    chosen_word = random.choice(words_list)
+    print('Randomly chosen word:', chosen_word)
+
+    # ask user for a letter
     guessed_letter = input('Guess a letter: ')
-    for each_letter in chosen_word:
-        if each_letter == guessed_letter:
-            match = guessed_letter
+    print('You guessed the letter,', str.upper(guessed_letter))
 
+    the_word = ''
+
+    for x in chosen_word:
+        if x == guessed_letter:
+            print(x)
+        else:
+            print('- ')
+            continue
+            lives = lives - 1
+            print('Lives remaining:', lives)
+
+'''
     if guessed_letter == match:
-        print('You got one right. ', guessed_letter, "is in the word")
-    #        continue
+        print('You got one right.', str.upper(guessed_letter), "is in", chosen_word)
+        continue
     else:
-        print('Sorry, ', guessed_letter, 'is not in the word')
-        lives = lives - 1
-    break
-        #blanks = blanks + '_ '
+        print('Sorry, the letter', str.upper(guessed_letter), 'is not in', chosen_word)
+        # lives = lives - 1
+         #blanks = blanks + '_ '
+        continue
 
+    break
 #print(blanks)
+'''
