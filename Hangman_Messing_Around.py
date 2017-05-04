@@ -8,24 +8,26 @@ random_word = random.choice(words_list)
 print('Random word is: ', random_word)
 
 while True:
-    if lives_remaining == 0:
-        print('You are out of lives.')
-        break
-    else:
-        user_guess = input('Guess a letter: ')
-        print('You guessed ' + user_guess)
-    
+	if lives_remaining == 0:
+		print('You are out of lives.')
+		break
+	else:
+		user_guess = input('Guess a letter: ')
+		print('You guessed ' + user_guess)
+
 # For each letter in random_word, if user_guess is in random_word, add the letter
 # to a variable to be printed later
 
-    for x in random_word:
-        if x == user_guess:
-            word_with_dashes = word_with_dashes + user_guess
-        else:
-            word_with_dashes = word_with_dashes + '-'
-        continue
+	for x in random_word:
+		if x == user_guess:
+			word_with_dashes = word_with_dashes + user_guess
+		else:
+			word_with_dashes = word_with_dashes + '-'
+			# lives_remaining = lives_remaining - 1
+		continue
 
-    print(word_with_dashes)
+	# print('You have', lives_remaining, 'lives remaining')
+	print(word_with_dashes)
 
 
 '''
